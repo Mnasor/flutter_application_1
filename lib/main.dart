@@ -26,52 +26,49 @@ class _MyAppState extends State<MyApp> {
           title: const Text("App Title"),
         ),
         body: Center(
-          child: currentIndex==0? Container(
-            height: double.infinity,
-            width: double.infinity,
-            color: Colors.black,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    onPrimary: Colors.black,
-                    primary: Colors.red,
-                  ),
-                  
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'Click';
-                      count++;
-                      buttonName = buttonName + '$count';
-                    });
-                  },
-                  child: Text(
-                    buttonName,
-                    style: TextStyle(fontSize: 0),
-                  ),
-                  
-                ),
-
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      buttonName = 'Click';
-                      count++;
-                      buttonName = buttonName + '$count';
-                    });
-                  },
-                  child: Text(
-                    buttonName,
-                    style: TextStyle(fontSize: 20),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+            child: currentIndex == 0
+                ? Container(
+                    height: double.infinity,
+                    width: double.infinity,
+                    color: Colors.black,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            onPrimary: Colors.black,
+                            primary: Colors.red,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              buttonName = 'Click';
+                              count++;
+                              buttonName = buttonName + '$count';
+                            });
+                          },
+                          child: Text(
+                            buttonName,
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              buttonName = 'Click';
+                              count++;
+                              buttonName = buttonName + '$count';
+                            });
+                          },
+                          child: Text(
+                            buttonName,
+                            style: TextStyle(fontSize: 20),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                : Image.asset('images/myImage.jpg')),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(
